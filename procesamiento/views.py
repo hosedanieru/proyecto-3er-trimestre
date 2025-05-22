@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import EtapaProcesamiento
+from .serializers import EtapaProcesamiento
 
-# Create your views here.
+class LoteViewSet(viewsets.ModelViewSet):
+    queryset = EtapaProcesamiento.objects.all()
+    serializer_class = EtapaProcesamiento
